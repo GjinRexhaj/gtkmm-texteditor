@@ -1,6 +1,7 @@
 # GTKmm-texteditor
 
-<p align="left"> <a href="https://www.gtk.org/" target="_blank" rel="noreferrer"> <img src="https://www.gtk.org/assets/img/logo-gtk-sm.png" alt="gtk" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.gtk.org/" target="_blank" rel="noreferrer"> <img src="https://www.gtk.org/assets/img/logo-gtk-sm.png" alt="gtk" width="40" height="40"/> </a> 
+								 <a href="https://cmake.org/" target="_blank" rel="noreferrer"> <img src="https://icon-icons.com/nl/icoon/cmake-logo/169379" alt="cmake" width="40" height="40"/> </a></p>
 
 ## General Information/Usage
 A simple text-editor program that uses GTK, and is built in C++ via GTKmm. 
