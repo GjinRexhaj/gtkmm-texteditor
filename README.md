@@ -2,7 +2,7 @@
 
 <p align="left"> <a href="https://www.gtk.org/" target="_blank" rel="noreferrer"> <img src="https://www.gtk.org/assets/img/logo-gtk-sm.png" alt="gtk" width="40" height="40"/> </a>
 								 <a href="https://gitlab.gnome.org/jpu/cambalache" target="_blank" rel="noreferrer"> <img src="https://gitlab.gnome.org/uploads/-/system/project/avatar/16462/emblem_cambalache_green_blue.png" alt="cmb" width="40" height="40"/> </a>
-								 <a href="https://isocpp.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="c++" width="40" height="40"/> </a>
+								 <a href="https://isocpp.org/" target="_blank" rel="noreferrer"> <img src="https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png" alt="c++" width="40" height="40"/> </a>
 								 <a href="https://cmake.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cmake.svg/240px-Cmake.svg.png" alt="cmake" width="40" height="40"/> </a>
 </p>								 
 								 
