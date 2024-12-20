@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.94.0 -->
+<interface>
+  <requires lib="gtk" version="4.12"/>
+  <object class="GtkApplicationWindow" id="mainWindow">
+    <property name="default-height">600</property>
+    <property name="default-width">700</property>
+    <child>
+      <object class="GtkBox" id="layout_frame">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox" id="topbar_frame">
+            <property name="margin-bottom">6</property>
+            <property name="margin-end">6</property>
+            <property name="margin-start">6</property>
+            <property name="margin-top">6</property>
+            <property name="spacing">6</property>
+            <child>
+              <object class="GtkButton" id="file_button">
+                <property name="halign">start</property>
+                <property name="icon-name">folder-symbolic</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSearchEntry" id="searchBar">
+                <property name="hexpand">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="save_button">
+                <property name="halign">end</property>
+                <property name="label">Save</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFrame" id="textfield_frame">
+            <property name="margin-end">5</property>
+            <property name="margin-start">5</property>
+            <child>
+              <object class="GtkScrolledWindow" id="textfield_scroll_window">
+                <child>
+                  <object class="GtkTextView" id="textfield_textview">
+                    <property name="buffer">
+                      <object class="GtkTextBuffer" id="textBuffer"/>
+                    </property>
+                    <property name="left-margin">10</property>
+                    <property name="monospace">True</property>
+                    <property name="top-margin">10</property>
+                    <property name="vexpand">True</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="bottombar_frame">
+            <property name="margin-bottom">5</property>
+            <property name="margin-end">5</property>
+            <property name="margin-start">5</property>
+            <property name="margin-top">5</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkLabel" id="fileIndicator">
+                <property name="halign">start</property>
+                <property name="hexpand">True</property>
+                <property name="label">NO FILE SELECTED</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="savedIndicator">
+                <property name="justify">right</property>
+                <property name="label">Unsaved Changes</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="about_button">
+                <property name="halign">end</property>
+                <property name="icon-name">help-about-symbolic</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkFileChooserDialog" id="fileOpenerWindow">
+    <property name="application">mainWindow</property>
+    <property name="create-folders">False</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="hide-on-close">True</property>
+    <property name="modal">True</property>
+    <property name="transient-for">mainWindow</property>
+  </object>
+  <object class="GtkFileChooserDialog" id="fileSaverWindow">
+    <property name="action">save</property>
+    <property name="application">mainWindow</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="hide-on-close">True</property>
+    <property name="modal">True</property>
+    <property name="transient-for">mainWindow</property>
+  </object>
+  <object class="GtkAboutDialog" id="aboutWindow">
+    <property name="application">mainWindow</property>
+    <property name="authors">Gjin Rexhaj</property>
+    <property name="comments">A simple text editor built with GTK and written in C++</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="hide-on-close">True</property>
+    <property name="license-type">bsd-3</property>
+    <property name="logo-icon-name">emblem-documents-symbolic</property>
+    <property name="modal">True</property>
+    <property name="program-name">Gtk-Texteditor</property>
+    <property name="transient-for">mainWindow</property>
+    <property name="version">dev</property>
+  </object>
+</interface>
