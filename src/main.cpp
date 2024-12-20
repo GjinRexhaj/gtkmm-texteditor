@@ -45,6 +45,11 @@ void on_file_button_clicked()
 {
     std::cout<<"file button clicked"<<"\n";
 
+    /*
+    auto fileChooserDialog = GTK::FileChooserNative::create("Choose file",
+            *this,  Gtk::FileChooser::Action::SELECT_FOLDER,
+            "Open", "Cancel");
+    */
     // TODO: ditch cambalache file dialogs and manually implement them in code
     // create file chooser dialog
 
