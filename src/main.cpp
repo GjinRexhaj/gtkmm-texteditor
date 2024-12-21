@@ -1,5 +1,7 @@
 #include <gtkmm.h>
 #include <iostream>
+#include <filesystem>
+#include <string>
 
 // TODO: properly format project with "main" source file and seperate files for mainwindow
 
@@ -21,13 +23,14 @@ void on_info_button_clicked()
 
     app->add_window(*aboutWindow);
     aboutWindow->set_visible(true);
-    //aboutWindow->
 }
 
 void on_save_button_clicked()
 {
+    // TODO: implement save once "open" has been implemented
     std::cout<<"save button clicked"<<"\n";
 
+    /*
     // open file saver dialog if file isn't open
     if (!isFileOpen) {
         //app->add_window(*fileSaverWindow);
@@ -39,29 +42,35 @@ void on_save_button_clicked()
         return;
     }
     std::cout<<"ERROR: Undefined Behavior";
+
+    */
 }
 
 void on_file_button_clicked()
 {
-    std::cout<<"file button clicked"<<"\n";
-
-    /*
-    auto fileChooserDialog = GTK::FileChooserNative::create("Choose file",
-            *this,  Gtk::FileChooser::Action::SELECT_FOLDER,
-            "Open", "Cancel");
-    */
     // TODO: ditch cambalache file dialogs and manually implement them in code
-    // create file chooser dialog
+    // TODO: find way to set default active folder for file choosers as working
+    // TODO: map fileChooserDialog to mainWindow as transient parent
 
-    //auto fileChooserDialog = Gtk::FileDialog::create();
-    //fileChooserDialog->open(sigc::bind(sigc::mem_fun(
-    //      *this, &mainWindow::on_file_opened), fileChooserDialog));
+    std::string workingDirectory = std::filesystem::current_path();
+    std::cout<<"file button clicked"<<"\n";
+    std::cout<<"current working directory: "<<workingDirectory<<"\n";
 
 
 
-    // old cambalache code:
-    //app->add_window(*fileChooserWindow);
-    //fileChooserWindow->set_visible(true);
+    auto fileChooserDialog = Gtk::FileChooserNative::create("Choose File to Open",
+            *mainWindow,  Gtk::FileChooser::Action::OPEN,
+            "Open", "Cancel");
+
+
+    fileChooserDialog->show();
+
+
+
+
+    // DEPRECATED: old cambalache code:
+    // app->add_window(*fileChooserWindow);
+    // fileChooserWindow->set_visible(true);
 }
 
 void on_file_opened() {
@@ -79,10 +88,6 @@ void on_app_activate()
   // set mainWindow to point to top-level widget of UI file
   mainWindow = builder->get_widget<Gtk::Window>("mainWindow");
   aboutWindow = builder->get_widget<Gtk::Window>("aboutWindow");
-
-  //fileChooserWindow = builder->get_widget<Gtk::Window>("fileOpenerWindow");
-  //fileSaverWindow = builder->get_widget<Gtk::Window>("fileSaverWindow");
-
 
   // CONNECT SIGNALS AND SLOTS
   auto aboutButton = builder->get_widget<Gtk::Button>("about_button");
@@ -112,5 +117,6 @@ int main(int argc, char** argv)
 {
   app = Gtk::Application::create();
   app->signal_activate().connect([] () { on_app_activate(); });
+
   return app->run(argc, argv);
 }
