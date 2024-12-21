@@ -24,7 +24,7 @@ Prerequisites:
 - Cambalache (if planning on altering the UI)
 
 
-This project uses gtkmm-4.0, which is fetched using pkg-config as specified in the top-level CMakeLists.txt file. 
+This project uses gtkmm-4.0, which is fetched using pkg-config as specified in the top-level CMakeLists.txt file. GTKmm is then included and linked via the innermost CMake file (src/CMakeLists.txt).
 Once you've configured CMake for this project, all dependencies should automatically be resolved.
 
 
